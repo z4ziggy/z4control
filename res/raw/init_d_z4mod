@@ -1,0 +1,12 @@
+#!/system/bin/sh
+PATH=/system/xbin:/system/bin:$PATH
+
+busybox tar zxvf /system/z4mod.tar.gz -C /
+busybox cp /system/z4mod.config /z4mod/config
+busybox mount -o remount,rw,llw,check=no /system || busybox mount -o remount,rw /system
+busybox rm $0
+busybox rm /system/z4mod.config
+busybox rm /system/z4mod.tar.gz
+busybox mount -o remount,ro /system
+
+exec /z4mod/bin/startz4mod

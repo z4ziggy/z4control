@@ -1,0 +1,14 @@
+#!/system/bin/sh
+# add bootanimation service
+PATH=/system/xbin:/system/bin:$PATH
+
+cat >> /init.rc <<EOF
+
+service bootanim /system/bin/bootanimation
+    user graphics
+    group graphics
+    disabled
+    oneshot
+EOF
+
+busybox sed -i 's|/system/bin/playlogos1|/system/bin/false|g' /init.rc

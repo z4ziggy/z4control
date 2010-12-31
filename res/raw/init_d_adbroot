@@ -1,0 +1,8 @@
+#!/system/bin/sh
+# adb root on recovery
+PATH=/system/xbin:/system/bin:$PATH
+
+busybox sed -i 's/ro.secure=1/ro.secure=0/g' /default.prop
+busybox sed -i 's/ro.allow.mock.location=1/ro.allow.mock.location=0/g' /default.prop
+busybox sed -i 's/ro.debuggable=0/ro.debuggable=1/g' /default.prop
+busybox sed -i 's/persist.service.adb.enable=0/persist.service.adb.enable=1/g' /default.prop

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="General">
+		<CheckBoxPreference android:title="Enable Tweaks"
+			android:key="EnableTweaks" 
+			android:summary="Enable general startup tweaks" 
+			android:defaultValue="false" />
+		<CheckBoxPreference android:title="Enable ADB Root"
+			android:key="EnableADBroot" 
+			android:summary="Allow ADB to run as root" 
+			android:defaultValue="false" />
+		<CheckBoxPreference android:title="Enable Boot Animation"
+			android:key="EnableBootAnim" 
+			android:summary="Allow 3rd party animation replacement" 
+			android:defaultValue="false" />
+	</PreferenceCategory>
+	<PreferenceCategory android:title="Look and feel" 
+		android:key="LookAndFeel">
+		<ListPreference android:title="LCD Density"
+			android:summary="Change screen resolution" 
+			android:key="ListDensity"
+			android:entries="@array/ListDensity" 
+			android:entryValues="@array/ListDensity" 
+			android:defaultValue="240" />
+		<ListPreference android:title="Boot Animation"
+			android:summary="Select the animation to display on startup"
+			android:key="ListBootAnims" />
+		<ListPreference android:title="Android theme"
+			android:summary="Select the Android Theme to use" 
+			android:key="ListThemes" />
+		<ListPreference android:title="Android animations"
+			android:summary="Select Android animations to use" 
+			android:key="ListAndAnims" />
+	</PreferenceCategory>
+	<PreferenceCategory android:title="LagFix settings" 
+		android:key="LagFix">
+		<PreferenceScreen android:title="Convert filesystems">
+			<PreferenceCategory android:title="Convert all partitions">
+				<ListPreference android:title="All"
+					android:dialogTitle="Convert all partitions to"
+					android:summary="Convert all partitions" 
+					android:key="LagFixAll" />
+			</PreferenceCategory>
+			<PreferenceCategory android:title="Convert single partition">
+			<ListPreference android:title="Data"
+				android:summary="/data partition" 
+				android:key="LagFixData" />
+			<ListPreference android:title="DBData"
+				android:summary="/dbdata partition" 
+				android:key="LagFixDBData" />
+			<ListPreference android:title="Cache"
+				android:summary="/cache partition" 
+				android:key="LagFixCache" />
+			<ListPreference android:title="System"
+				android:summary="/system partition" 
+				android:key="LagFixSystem" />
+			</PreferenceCategory>
+			<PreferenceCategory android:title="Log">
+				<PreferenceScreen android:title="View log file" 
+					android:key="DisplayLog">
+					<com.z4control.TextViewPreference 
+						android:key="LogTextView"
+						android:title="/sdcard/z4mod.log"
+						android:layout_height="fill_parent"
+						android:summary="-empty-"/>
+				</PreferenceScreen>
+				<PreferenceScreen android:key="DeleteLog"
+					android:title="Delete log file"/>
+			</PreferenceCategory>
+		</PreferenceScreen>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="Advanced options">
+		<PreferenceScreen android:key="RunScript"
+			android:summary="Execute bash script from sdcard" 
+			android:title="Run a script">
+		</PreferenceScreen>
+		<PreferenceScreen android:key="Installkernel"
+			android:summary="Flash a zImage file from sdcard" 
+			android:title="Install kernel"/>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="About z4control">
+		<PreferenceScreen android:key="About"
+			android:summary="You really want to know?" 
+			android:title="About"/>
+	</PreferenceCategory>
+</PreferenceScreen>

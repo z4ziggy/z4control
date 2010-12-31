@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">z4control</string>
+
+<string-array name="ListDensity">
+	<item>140</item>
+	<item>160</item>
+	<item>180</item>
+	<item>200</item>
+	<item>220</item>
+	<item>240</item>
+</string-array>
+
+</resources>
